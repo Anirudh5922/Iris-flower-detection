@@ -1,0 +1,35 @@
+<html>
+<head>
+ <title>Flower Prediction</title>  
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:powderblue;">
+<h1 class="bg-primary text-white">Flower Prediction</h1>
+<div class="card bg-info">
+    <div class="card-body">
+<h3 class="card-title bg-warning">Please enter your flower measurements below:</h3>
+<form  method="POST">
+  <p class= "text-white">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    {{ form.sep_len.label }} {{form.sep_len}}
+    <br>
+    {{ form.sep_wid.label}} {{form.sep_wid}}
+    <br>
+    {{form.pet_len.label}} {{form.pet_len}}
+    <br>
+    {{form.pet_wid.label}} {{form.pet_wid}}
+    <br><br>
+    {{ form.submit() }}  
+</form>
+</div>
+  </div>
+  <br>
+ <img src="{{url_for('static', filename='flower1.jpg')}}"  width="1500" height="350"> 
+</body>
+</html>

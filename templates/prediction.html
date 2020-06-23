@@ -1,0 +1,28 @@
+<html>
+<head>
+ <title>Flower Prediction</title> 
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:powderblue;">
+<h1 class="bg-primary text-white">Thank You. Here is the Information You Gave:</h1>
+<div class="card bg-info  text-white">
+    <div class="card-body">   	
+<ul>
+	<li>Sepal Length: {{session['sep_len']}}</li>
+	<li>Sepal Width:  {{session['sep_wid']}}</li>
+	<li>Petal Length: {{session['pet_len']}}</li>
+	<li>Petal Width:  {{session['pet_wid']}}</li>
+</ul>
+</div>
+</div>
+<br>
+<h2 class="bg-warning">Your Predicted Flower Class is: {{results}}</h2>
+<br><br>
+<img src="{{url_for('static', filename=results+'.jpg')}}"  width="500" height="300" class="rounded-circle mx-auto d-block" alt={{result}}> 
+</body>
+</html>
